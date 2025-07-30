@@ -42,8 +42,12 @@ abstract class WrapperTestCase extends TestCase
 
     #[Test]
     #[DataProvider('provideAllMethods')]
-    public function proxiedMethodsRequireWrappedClass(string $method, array $args): void
-    {
+    public function proxiedMethodsRequireWrappedClass(
+        string $method,
+        array $args,
+        mixed $unused0 = null,
+        mixed $unused1 = null,
+    ): void {
         $sut = new (static::fixture())();
         $this->expectException(\UnexpectedValueException::class);
         $sut->$method(...$args);

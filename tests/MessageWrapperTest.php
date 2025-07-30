@@ -9,7 +9,7 @@ use PhoneBurner\Tests\Http\Message\Fixture\MessageWrapperFixture;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\MessageInterface;
 
-class MessageWrapperTest extends EvolvingWrapperTestCase
+final class MessageWrapperTest extends EvolvingWrapperTestCase
 {
     use MessageDataProvider;
 

@@ -1,13 +1,12 @@
-HTTP Tortilla - HTTP Message (PSR-7) Wrapper
-============================================
+# HTTP Tortilla - HTTP Message (PSR-7) Wrapper
 
 This library provides a simple set of traits to allow wrapping (or
 decoration) of various PSR-7 classes. Wrapping the classes allows easy
 addition of convenience methods while maintaining compatibility with
 code that relies on the underlying PSR interfaces.
 
-Requirements
--------
+## Requirements
+
 This package will work with either v1.1 or v2.0 of the PSR-7 interfaces, but
 does not provide the actual implementations to be wrapped. Those can be found
 in other packages, e.g [`guzzlehttp/psr-7`](https://github.com/guzzle/psr7)
@@ -17,8 +16,8 @@ As the traits provide the interface methods, they also _enhance_ the
 method signatures with type hints and return values. Because of that
 PHP 8.2 or higher is required.
 
-Usage
------
+## Usage
+
 To add behaviour to a PSR7 object that implements `MessageInterface` or
 one of its subclasses `use` the matching wrapper trait, and call
 `setMessage($message)` to wrap the target object.
@@ -56,8 +55,8 @@ class Request implements ServerRequestInterface
 }
 ```
 
-Example
--------
+## Example
+
 Perhaps it would be convenient to access query parameters as a
 collection (and not the interface's `array`):
 

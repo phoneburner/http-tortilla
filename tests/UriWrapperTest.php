@@ -8,7 +8,7 @@ use PhoneBurner\Tests\Http\Message\Fixture\UriWrapperFixture;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\UriInterface;
 
-class UriWrapperTest extends EvolvingWrapperTestCase
+final class UriWrapperTest extends EvolvingWrapperTestCase
 {
     /**
      * @var ObjectProphecy<UriInterface>
