@@ -11,7 +11,7 @@ use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UploadedFileInterface;
 
-class UploadedFileWrapperTest extends WrapperTestCase
+final class UploadedFileWrapperTest extends WrapperTestCase
 {
     /**
      * @var ObjectProphecy<UploadedFileInterface>
@@ -58,9 +58,9 @@ class UploadedFileWrapperTest extends WrapperTestCase
     #[Test]
     public function moveToPassesTargetToWrappedClass(): void
     {
-        $this->mock()->moveTo('path')->shouldBeCalled();
+        $this->mocked_wrapped->moveTo('path')->shouldBeCalled();
 
-        $sut = new UploadedFileWrapperFixture($this->mock()->reveal());
+        $sut = new UploadedFileWrapperFixture($this->mocked_wrapped->reveal());
         $sut->moveTo('path');
     }
 
@@ -68,11 +68,12 @@ class UploadedFileWrapperTest extends WrapperTestCase
     #[TestWith([\InvalidArgumentException::class, \RuntimeException::class])]
     public function moveToCatchesNoExceptions(
         string $class,
+        mixed $unused = null,
     ): void {
         \assert(\is_a($class, \Throwable::class, true));
-        $this->mock()->moveTo('path')->willThrow(new $class());
+        $this->mocked_wrapped->moveTo('path')->willThrow(new $class());
 
-        $sut = new UploadedFileWrapperFixture($this->mock()->reveal());
+        $sut = new UploadedFileWrapperFixture($this->mocked_wrapped->reveal());
         $this->expectException($class);
         $sut->moveTo('path');
     }

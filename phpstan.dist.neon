@@ -1,14 +1,9 @@
-includes:
-    - phar://phpstan.phar/conf/bleedingEdge.neon
-
 parameters:
-    level: max
-
+    level: 8
+    tmpDir: build/phpstan
     paths:
         - src
         - tests
-
-    tmpDir: build/phpstan
 
     ignoreErrors:
         - identifier: missingType.iterableValue

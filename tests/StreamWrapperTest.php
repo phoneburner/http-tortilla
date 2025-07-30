@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\StreamInterface;
 
-class StreamWrapperTest extends WrapperTestCase
+final class StreamWrapperTest extends WrapperTestCase
 {
     /**
      * @var ObjectProphecy<StreamInterface>
