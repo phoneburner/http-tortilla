@@ -14,7 +14,7 @@ with the latest versions of PHP, PSR-7, and PHPUnit.
 
 - Add "Dockerfile", "docker-compose.yml", and ".dockerignore" files to create a standardized isolated development
   environment for contributors.
-- Add support for PHP  8.2, 8.3, and 8.4
+- Add support for PHP 8.2, 8.3, and 8.4
 - Add missing code coverage for `StreamWrapper::tell()`
 - A Makefile was added for easier management of common tasks such as cleaning build artifacts, starting a bash shell in
   the development container, running tests, rectifying code style issues, and running PHPStan code analysis.
